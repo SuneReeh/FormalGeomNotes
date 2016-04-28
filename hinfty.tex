@@ -593,9 +593,9 @@ F \arrow{r} & \FGps.
 Let $\G\co S \to \FGps$ be a formal group of finite height over a $p$--local formal scheme $S$.  The functor $\Level(A, \G)$ is exactly the functor defined in Section 9 (see above), and in particular it is represented by an $S$--scheme.  The maps $\psi_\ell$ and $f_\ell$ from Definition 3.1 amount to giving a map $d_1\co \Level_1(\G) \to S$ and an isogeny $q\co d_0^* \G \to d_1^* \G$ whose kernel on $\Level(A, \G)$ is $A$.  The other conditions on Definition 3.1 exactly ensure that $(\Level_*(\G), d_*, s_*)$ is a simplicial functor and over $\Level_2(\G)$ the relevant hexagonal diagram commutes:
 \begin{center}
 \begin{tikzcd}
-& d_0^* d_0^* \G \arrow[-,equal]{ld} \arrow{rd}{d_0^* q} \\
-d_1^* d_0^* \G \arrow{d}{d_1^* q} & & d_0^* d_1^* \G \arrow[-,equal]{d} \\
-d_1^* d_1^* \G \arrow[-,equal]{rd} & & d_2^* d_0^* \G \arrow{ld}{d_2^* q} \\
+& d_0^* d_0^* \G \arrow[equal]{ld} \arrow{rd}{d_0^* q} \\
+d_1^* d_0^* \G \arrow{d}{d_1^* q} & & d_0^* d_1^* \G \arrow[equal]{d} \\
+d_1^* d_1^* \G \arrow[equal]{rd} & & d_2^* d_0^* \G \arrow{ld}{d_2^* q} \\
 & d_2^* d_1^* \G.
 \end{tikzcd}
 \end{center}
@@ -694,6 +694,17 @@ This has the following benefit: instead of being born out of the unstable diagon
 and
 \[N^{tC_p} = F(X,E)^{tC_p}\]
 take cofiber sequences in (finite) $X$ to fiber sequences of spectra. I think that this means that, instead of being functions of the unstable diagonal map on $X$, they are constructions that only require knowledge of the \emph{stable} homotopy type of $X$\todo{I don't understand this. I guess this has been a recurring theme in the Thursday seminar, and also in Chapters 2 and 6 of these notes (in some guise). I can ask Mike to explain it to me.}. I believe in fact that, by checking the case $X = S^0$, we then find that the map $M^{tC_p} \to N^{tC_p}$ is an equivalence for any finite $X$, and that should hopefully be enough to buy us a monomorphism on any of the $X$'s that we're describing.
+
+
+
+The stability of the Tate construction comes about for the following reason.
+
+Say we have a cofiber sequence $X \to Y \to Y/X$. Then the $p$--fold smash power $Y^{(p)}$ has a natural, equivariant filtration: $Y$ is, for dumb reasons, the homotopy colimit of $(X \to Y)$, then $Y^{(p)}$ is the hocolim of a $p$--fold smash power of this diagram (now indexed on $\{0 \to 1\}^{\times p}$). We can filter this diagram, equivariantly, according to ``distance from the initial vertex'', and get an equivariant filtration of $Y^{(p)}$ whose associated graded in degree $k$ consists of all ways to smash $k$ copies of $Y/X$ with $(p-k)$ copies of $X$ in some order. In grading $0$ this is $X^{(p)}$, and in grading $p$ this is $(Y/X)^{(p)}$; in all the gradings in between you get a wedge of terms where $C_p$ acts by permuting the wedge factors.
+
+The Tate construction preserves $C_p$-equivariant cofiber sequences, and destroys anything where $C_p$ acts by permuting wedge factors. As a result, the only parts that survive are the bottom $(X^{(p)})^{tC_p}$ and the top $((Y/X)^{(p)})^{tC_p}$ in a cofiber sequence.
+
+The standard reference should probably be Greenlees--May's \textit{Generalized Tate cohomology theories} but I'm not as closely familiar with the contents there. Sometimes this is called the topological Singer construction and I originally learned about it from Lunoe--Nielsen--Rognes. This talk about the stability properties is present in section 2 of DAG XIII somewhere, and possibly also in Jacob's notes on the Sullivan conjecture. Charles pointed out to me recently that these properties of the Tate construction are really why the Steenrod operations and certain power operations are stable: it's because they don't come out of a homotopy orbit construction on a smash power, but instead out of a Tate construction.
+
 
 
 
